@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: mern-stack
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/rajibul2009/k8s-manifests.git'
+    targetRevision: HEAD
+    path: base
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: mern-stack
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
