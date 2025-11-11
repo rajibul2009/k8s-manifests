@@ -6,7 +6,6 @@ namespace: mern-stack
 resources:
   - namespace.yaml
   - mysql/secret.yaml
-  - mysql/pvc.yaml
   - mysql/deployment.yaml
   - mysql/service.yaml
   - backend/deployment.yaml
